@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt">
+  <link
+    rel="shortcut icon"
+    href="./images/g1-favicon.png"
+    type="image/x-icon"
+  />
+  <head>
+    <meta charset="UTF-8" />
+    <title>Obrigado pela busca</title>
+    <style>
+      body {
+        background: linear-gradient(
+          135deg,
+          rgb(234, 151, 108),
+          rgb(245, 194, 142)
+        );
+
+        color: white;
+        font-family: Arial, sans-serif;
+        text-align: center;
+      }
+      .container {
+        max-width: 600px;
+        margin: auto;
+      }
+      .data-field {
+        margin-top: 15px;
+        font-size: 1.2em;
+        color: #ffcc00;
+        text-align: left;
+        max-width: 400px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .label {
+        font-weight: bold;
+        color: #fff;
+      }
+      body {
+        display: flex;
+        margin: 0;
+      }
+      img {
+        display: block;
+        padding: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <img src="./images/ty.jpg" alt="" style="height: 100vh" />
+    </div>
+    <div class="container">
+      <center><img src="./images/g1-favicon.png" alt="" /></center>
+      <h1>Obrigado pela sua busca!</h1>
+      <p>Recebemos o seu pedido de busca com os seguintes dados:</p>
+
+      <div class="data-field">
+        <div>
+          <span class="label">Nome:</span>
+          <span id="name"></span>
+        </div>
+        <div>
+          <span class="label">Sobrenome:</span>
+          <span id="surname"></span>
+        </div>
+        <div>
+          <span class="label">Email:</span>
+          <span id="email"></span>
+        </div>
+        <div>
+          <span class="label">Telefone:</span>
+          <span id="phone"></span>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function getQueryParam(param) {
+        const params = new URLSearchParams(window.location.search);
+        return params.get(param);
+      }
+
+      const name = getQueryParam("name") || "Não informado";
+      const surname = getQueryParam("surname") || "Não informado";
+      const email = getQueryParam("email") || "Não informado";
+      const phone = getQueryParam("phone") || "Não informado";
+
+      document.getElementById("name").textContent = name;
+      document.getElementById("surname").textContent = surname;
+      document.getElementById("email").textContent = email;
+      document.getElementById("phone").textContent = phone;
+    </script>
+  </body>
+</html>
